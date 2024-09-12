@@ -1,0 +1,192 @@
+extend layouts/default.pug 
+include mixins/product-item.pug
+
+block title 
+  title Danh Sách Sản Phẩm
+
+block main 
+    //- Breadcumb
+    .breadcumb 
+      .container 
+        nav.breadcumb__wrap 
+          ul 
+            li 
+              a(href="#" class="") Trang chủ              
+            li 
+              a(href="#") Chó
+              
+            li 
+              a(href="#") Chó nhỏ
+
+    //- End Breadcumb
+
+    //- Section 3
+    include partials/section-3.pug
+    //- End Section 3
+
+    //- Section 5
+    section.section-5 
+      .container 
+        .section-5__wrap 
+          .section-5__left 
+            .box-filter 
+              .box-filter__title 
+                img(src="assets/images/Filter-ProductList.svg" alt="icon-filter")
+                | Bộ lọc
+
+              .box-filter__group 
+                .box-filter__group-lable Giống
+                .box-filter__group-list 
+                  .box-filter__group-item 
+                    input(type="checkbox" name="" )
+                    label(for="1") Đực
+                  .box-filter__group-item
+                    input(type="checkbox" name="" )
+                    label(for="1") Cái
+              
+              .box-filter__group 
+                .box-filter__group-lable Màu sắc
+                .box-filter__group-list 
+                  .box-filter__group-item 
+                    input(type="checkbox" name="" )
+                    label(for="1") Xám
+                  .box-filter__group-item
+                    input(type="checkbox" name="" )
+                    label(for="1") Đen
+                  .box-filter__group-item
+                    input(type="checkbox" name="" )
+                    label(for="1") Trắng
+
+              .box-filter__group 
+                .box-filter__group-lable Kích thước
+                .box-filter__group-list 
+                  .box-filter__group-item 
+                    input(type="checkbox" name="" )
+                    label(for="1") Nhỏ
+                  .box-filter__group-item
+                    input(type="checkbox" name="" )
+                    label(for="1") Vừa
+                  .box-filter__group-item
+                    input(type="checkbox" name="" )
+                    label(for="1") Lớn
+
+          .section-5__right
+            - 
+              var pets = [
+                {
+                  image: '/project-2/assets/images/image 1.jpg',
+                  title : 'MO231 - Pomeranian Trắng',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '5.000.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 2.jpg',
+                  title : 'MO502 - Poodle Tiny Vàng',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '3.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 3.jpg',
+                  title : 'MO102 - Poodle Tiny Sepia',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '4.000.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 4.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 5.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 6.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 7.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 8.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 5.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 6.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 7.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 8.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+              ];
+
+            .section-5__head 
+              h2.section-5__title  Chó Nhỏ
+              .box-filter__title 
+                img(src="assets/images/Filter-ProductList.svg" alt="icon-filter")
+                | Bộ lọc
+ 
+            .section-5__list 
+              each pet in pets 
+                +product-item(pet)
+
+            nav.pagination 
+              ul 
+                li 
+                  a(href="#" class="pagination__item") 
+                    i(class="fa-solid fa-arrow-left")
+                li 
+                  a(href="#" class="pagination__item pagination__item--active" ) 1
+                li 
+                  a(href="#" class="pagination__item") 2
+                li 
+                  a(href="#" class="pagination__item") 3
+                li 
+                  a(href="#" class="pagination__item") 4
+                li 
+                  a(href="#" class="pagination__item") ...
+                li 
+                  a(href="#" class="pagination__item") 28
+                li 
+                  a(href="#" class="pagination__item") 
+                    i(class="fa-solid fa-arrow-right")
+    //- End Section 5

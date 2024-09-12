@@ -1,0 +1,205 @@
+extend layouts/default.pug 
+include mixins/product-item.pug
+
+block title 
+  title Trang Chủ
+
+block main 
+    //- section 1
+    section.section-1
+        .container
+            .section-1__wrap
+                img(class="section-1__bg-4" src="assets/images/section-1-bg-4.svg" alt="")
+                .section-1__content
+                    img(class="section-1__bg-1" src="assets/images/section-1-bg-1.svg" alt="")
+                    h1(class="section-1__title")
+                        div(class="section-1__title-main")
+                            |Thêm Một Bạn
+                        div(class="section-1__title-sub")
+                            |Thêm Ngàn Niềm Vui!
+                    div(class="section-1__desc")
+                        |Có một con thú cưng đồng nghĩa với |việc bạn có thêm niềm vui mới. Chúng |tôi có hơn 200 con thú cưng khác nhau |có thể đáp ứng nhu cầu của bạn!
+                    div(class="section-1__buttons")
+                        a(href="#" class="button-outline")
+                            |Giới Thiệu
+                            i(class="fa-regular fa-circle-play")
+                        a(href="#" class="button")
+                            |Khám Phá Ngay
+                    img(class="section-1__bg-2" src="assets/images/section-1-bg-2.svg" alt="")
+                .section-1__image
+                    img(src="/Project-1/assets/images/section-1-square-light-1.svg" alt="" class="section-1__square-light-1")
+                    img(src="/Project-1/assets/images/section-1-square-light-2.svg" alt="" class="section-1__square-light-2")
+                    img(src="/Project-1/assets/images/section-1-square-dark.svg" alt="" class="section-1__square-dark")
+                    img(src="/Project-1/assets/images/section-1-bg-5.svg" alt="" class="section-1__bg-5")
+                    img(class="section-1__bg-3" src="assets/images/section-1-bg-3.svg" alt="")
+                    img(src="assets/images/image-1.png" class="section-1__image-main" alt="")
+    //- End section 1
+
+    //- Section 2
+    section.section-2
+        .container
+          div(class="box-heading")
+            div(class="box-heading__left")
+                div(class="box-heading__sub-title")
+                  |Có gì mới?
+                h2(class="box-heading__title")
+                  |một số vật nuôi của chúng tôi
+            div(class="box-heading__right")
+                a(href="#" class="button-outline")
+                  |Xem thêm
+                  i(class="fa-solid fa-angle-right")
+
+          div(class="section-2__wrap")
+            - 
+              var pets = [
+                {
+                  image: '/project-2/assets/images/image 1.jpg',
+                  title : 'MO231 - Pomeranian Trắng',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '5.000.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 2.jpg',
+                  title : 'MO502 - Poodle Tiny Vàng',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '3.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 3.jpg',
+                  title : 'MO102 - Poodle Tiny Sepia',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '4.000.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 4.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 5.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 6.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 7.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 8.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 5.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 6.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 7.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+                {
+                  image: '/project-2/assets/images/image 8.jpg',
+                  title : 'MO512 - Alaskan Malamute',
+                  gender: 'Đực',
+                  age: '02 tháng',
+                  price: '8.900.000 VND',
+                },
+              ];
+
+            each pet in pets 
+                +product-item(pet)
+
+          div(class="section-2__button-bottom")
+            a(href="#" class="button-outline")
+              |Xem thêm
+              i(class="fa-solid fa-angle-right")
+    //- End Section 2
+
+
+    //- Section 3
+    include partials/section-3.pug
+    //- End Section 3
+
+    //- section-4 
+    section.section-4
+      .container
+          div(class="box-heading")
+              div(class="box-heading__left")
+                  div(class="box-heading__sub-title")
+                      |Có thể bạn đã biết?
+                  div(class="box-heading__title")
+                      |Kiến thức thú cưng hữu ích
+              div(class="box-heading__right")
+                  a(href="#" class="button-outline")
+                    |Xem thêm
+                    i(class="fa-solid fa-angle-right")
+          div(class="section-4__wrap")
+              div(class="section-4__item")
+                  div(class="section-4__image")
+                      img(src="/Lesson 7/Project-1/asset/img/section-4-img-1.jpg" alt="")
+                  div(class="section-4__content")
+                      div(class="section-4__tag")
+                          |Kiến thức thú cưng
+                      h3(class="section-4__title")
+                          |Pomeranian là gì? Cách nhận biết chó Pomeranian
+
+                      p(class="section-4__desc")
+                          |Pomeranian hay còn gọi là chó Pomeranian (chó Pom) luôn nằm trong top những thú cưng dễ thương nhất. Không chỉ vậy, giống chó xiếc nhỏ nhắn, đáng yêu, thông minh, thân thiện và khéo léo.
+              div(class="section-4__item")
+                  div(class="section-4__image")
+                      img(src="/Lesson 7/Project-1/asset/img/section-4-img-2.jpg" alt="")
+                  div(class="section-4__content")
+                      div(class="section-4__tag")
+                          |Kiến thức thú cưng
+                      h3(class="section-4__title")
+                          |Pomeranian là gì? Cách nhận biết chó Pomeranian
+                      p(class="section-4__desc")
+                          |Việc chia khẩu phần ăn cho chó thoạt nghe có vẻ đơn giản nhưng có một số quy tắc bạn nên biết để chó cưng dễ dàng hấp thụ các chất dinh dưỡng trong khẩu phần ăn. Dành cho những người mới bắt đầu nuôi chó, đặc biệt là chó con mới sinh có sức đề kháng tương đối yếu.
+              div(class="section-4__item")
+                  div(class="section-4__image")
+                      img(src="/Lesson 7/Project-1/asset/img/section-4-img-3.jpg" alt="")
+                  div(class="section-4__content")
+                      div(class="section-4__tag")
+                          |Kiến thức thú cưng
+                      h3(class="section-4__title")
+                          |Pomeranian là gì? Cách nhận biết chó Pomeranian
+                      p(class="section-4__desc")
+                          |Chó cắn là hiện tượng phổ biến trong quá trình phát triển. Tuy nhiên, không ai muốn thấy đồ đạc, vật dụng quan trọng của mình bị chó cắn.
+          div(class="section-4__button-bottom")
+            a( href="#" class="button-outline")
+              |Xem thêm
+              i(class="fa-solid fa-angle-right")
+    //- End section-4 
+    

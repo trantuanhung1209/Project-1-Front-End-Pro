@@ -1,0 +1,13 @@
+mixin product-item (pet) 
+    div(class="product-item")
+        a(href="#")
+            div(class="product-item__image")
+                img( src=pet.image alt=pet.title)
+            div(class="product-item__content")
+                h3(class="product-item__title") #{pet.title}
+                div(class="product-item__info")
+                    div(class="product-item__info-item")
+                        |Giống: <b>#{pet.gender}</b>
+                    div(class="product-item__info-item")
+                        |Tuổi: <b>#{pet.age}</b>
+                div(class="product-item__price") #{pet.price}

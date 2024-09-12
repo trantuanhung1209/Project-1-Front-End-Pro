@@ -1,0 +1,99 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    block title
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css")
+    link(rel="shortcut icon", href="assets/images/favicon.png", type="image/x-icon")
+    link(rel="stylesheet" href="assets/css/style.css")
+  body
+    
+    //- Header
+    header.header
+      .container
+        .header__wrap
+          //- Menu Mobile
+          button.header__menu-mobile
+            i(class="fa-solid fa-bars")
+
+          //- Logo
+          .header__logo
+            a(href="index.html")
+              img(src="assets/images/logo.svg" alt="Monito")
+
+          //- Menu
+          nav.header__menu
+            ul
+              li
+                a(href="index.html") Trang Chủ
+              li
+                a(href="product-list.html") Danh Mục
+              li
+                a(href="product-detail.html") Giới Thiệu
+              li
+                a(href="#") Liên Hệ
+
+          //- Search
+          button.header__search-mobile
+            i(class="fa-solid fa-magnifying-glass")
+          form(action="#" class="header__form")
+            input(name="keyword" placeholder="Nhập từ khóa...")
+            button
+              i(class="fa-solid fa-magnifying-glass")
+
+          //- Button
+          a(href="#" class="button") Tham Gia Cộng Đồng
+    //- End Header
+
+    block main 
+
+    //- footer 
+    footer.footer
+      .container
+        div(class="footer__top")
+          h3(class="footer__content")
+            |Đăng ký ngay để không bỏ lỡ các chương trình của chúng tôi
+          form(action="#" class="footer__form")
+            input(type="email" name="" id="" placeholder="Nhập email của bạn...")
+            button(type="submit") Đăng Ký Ngay
+        div(class="footer__midle")
+          nav(class="footer__links")
+            ul
+              li 
+                a(href="index.html") Trang Chủ
+              li
+                a(href="product-list.html") Danh Mục
+              li
+                a(href="product-detail.html") Giới Thiệu
+              li
+                a(href="#") Liên Hệ
+
+          nav(class="footer__social")
+            ul 
+              li
+                a(href="#" target="_blank")
+                  i(class="fa-brands fa-facebook")
+              li
+                a(href="#" target="_blank")
+                  i(class="fa-brands fa-x-twitter")
+              li
+                a(href="#" target="_blank")
+                  i(class="fa-brands fa-instagram")
+              li
+                a(href="#" target="_blank")
+                  i(class="fa-brands fa-youtube")
+
+        div(class="footer__bottom")
+          div(class="footer__copyright")
+            |© 2023 Hune. All rights reserved.
+          div(class="footer__logo")
+            a(href="index.html")
+              img(src="/Project-1/assets/images/logo.svg" alt="")
+          div(class="footer__links")
+            ul
+              li
+                a(href="#") Điều khoản dịch vụ
+              li
+                a(href="#") Chính sách bảo mật
+    //- End footer 
