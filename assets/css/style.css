@@ -120,6 +120,7 @@ a {
   padding: 0 16px;
   display: inline-flex;
   gap: 12px;
+  position: relative;
 }
 .header__form input {
   border: 0;
@@ -137,10 +138,38 @@ a {
   padding: 0;
   order: 0;
 }
+.header__form--suggest {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+.header__form--suggest ul {
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #F3F3F3;
+  border-radius: 5px;
+}
+.header__form--suggest ul li {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  color: #667479;
+}
+.header__form--suggest[show=yes] {
+  display: block;
+}
 .header__search-mobile {
   display: none;
 }
 .header__menu-mobile {
+  display: none;
+}
+.header__menu--overlay i {
   display: none;
 }
 @media (max-width: 1199.98px) {
@@ -179,8 +208,55 @@ a {
   .header__menu {
     display: none;
   }
+  .header__menu[show=yes] {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+  }
+  .header__menu[show=yes] ul {
+    flex-direction: column;
+    gap: 15px;
+    width: 250px;
+    height: 100%;
+    background-color: whitesmoke;
+    text-align: start;
+    padding: 20px 0 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .header__menu[show=yes] .header__menu--overlay {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  .header__menu[show=yes] .header__menu--overlay i {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
   .header__logo img {
     height: 32px;
+  }
+}
+@media (max-width: 575.98px) {
+  .header__menu[show=yes] .header__menu--overlay i {
+    position: absolute;
+    top: 5px;
+    right: 5px;
   }
 }
 
