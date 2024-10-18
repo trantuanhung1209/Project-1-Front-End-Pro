@@ -304,6 +304,9 @@ a {
 .section-1__title-main {
   font-size: 60px;
 }
+.section-1__title-sub {
+  font-size: 48px;
+}
 .section-1__desc {
   font-size: 16px;
   font-weight: 500;
